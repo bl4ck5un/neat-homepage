@@ -1,13 +1,8 @@
+@import "compass/css3/box-sizing";
+
 $header-font-size: 1.2em;
 
 body > header {
-
-  font-size: $header-font-size;
-
-  @if $header-off {
-    display: none;
-  }
-  overflow: hidden;
   @if $header-bg-img {
     background: $header-bg-img;
   }
@@ -15,19 +10,35 @@ body > header {
     background: $header-bg;
   }
 
-  h1 {
-    display: inline-block;
-    margin: .2em 0 0;
-    a, a:visited, a:hover {
-      color: $title_color;
-      text-decoration: none;
+  @if $pic-header {
+    h1, h2 {display:  none;}
+    div#logo{
+      display: block;
+      @include box-sizing('border-box');
+      background: image-url('logo.png') no-repeat;
+      background-size: auto 70px;
+      background-position: center left;
+      height: 90px;
     }
   }
-  h2 {
-    margin: 0 0 .4em;
-    @extend .sans;
-    font-size: 1em;
-    color: $subtitle-color;
-    font-weight: normal;
+  @else {
+    font-size: $header-font-size;
+    overflow: hidden;
+    h1 {
+      display: inline-block;
+      margin: .2em 0 0;
+      a, a:visited, a:hover {
+        color: $title_color;
+        text-decoration: none;
+      }
+    }
+    h2 {
+      margin: 0 0 .4em;
+      @extend .sans;
+      font-size: 1em;
+      color: $subtitle-color;
+      font-weight: normal;
+    }
   }
+
 }

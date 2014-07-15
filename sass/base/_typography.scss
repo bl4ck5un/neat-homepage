@@ -36,7 +36,7 @@ body > header h2 {
 body {
   line-height: 1.5em;
   color: $text-color;
-  @extend .serif;
+  @extend .sans;
   font-size: 1.2em;
   word-spacing: 4px;
 }
