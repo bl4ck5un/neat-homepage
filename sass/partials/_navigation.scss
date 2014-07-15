@@ -1,25 +1,21 @@
-body nav {
-  background: $nav-bg-img;
-  width: auto;
-  padding-left: 30px;
+$nav-font: "Lato";
+$nav-bg: darken(#83AF9B, 5);
+$nav-text-color: #888;
+$nav-hover-color: #333333;
 
+body > nav {
+  background: $main-bg image-url("noise.png");
+  padding-top: 12px;
+
+  text-align: center;
   ul {
     list-style: none;
     margin: 0;
     padding: 0;
     line-height: 1;
-    display: block;
+    display: inline-block;
     zoom: 1;
     border: none;
-
-    &:after {
-      content: ' ';
-      display: block;
-      font-size: 0;
-      height: 0;
-      clear: both;
-      visibility: hidden;
-    }
   }
 
   ul > li {
@@ -34,11 +30,10 @@ body nav {
     color: $nav-text-color;
     text-decoration: none;
     display: block;
-    padding: 15px 25px;
+    padding: 10px 25px;
     font-family: $nav-font;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 14px;
+    text-transform: capitalize;
+    font-size: 20px;
     position: relative;
     -webkit-transition: color .25s;
     -moz-transition: color .25s;
@@ -49,54 +44,37 @@ body nav {
     box-shadow: none;
     text-shadow: none;
 
-
-
     &:visited {
-	color: $nav-text-color;
+	  color: $nav-text-color;
     }
   }
-}
 
-body nav ul li a:hover {
-  color: $nav-hover-color;
-}
-
-body nav ul li a:hover:before {
-  width: 100%;
-}
-
-body nav ul li {
-
-  a:after {
-	  content: '';
-	  display: block;
-	  position: absolute;
-	  right: -3px;
-	  top: 19px;
-	  height: 6px;
-	  width: 6px;
-	  background: #FFF;
-	  opacity: .5;
+  ul li a:hover {
+    color: $nav-hover-color;
   }
 
-  a:before {
-	  content: '';
-	  display: block;
-	  position: absolute;
-	  left: 0;
-	  bottom: 0;
-	  height: 3px;
-	  width: 0;
-	  background: $nav-hover-color;
-	  -webkit-transition: width .25s;
-	  -moz-transition: width .25s;
-	  -ms-transition: width .25s;
-	  -o-transition: width .25s;
-	  transition: width .25s;
+  ul li a:hover:before {
+    width: 100%;
   }
-}
 
-body nav ul li.last > a:after,
-body nav ul li:last-child > a:after {
+  ul li a:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 0;
+      background: $nav-hover-color;
+      -webkit-transition: width .25s;
+      -moz-transition: width .25s;
+      -ms-transition: width .25s;
+      -o-transition: width .25s;
+      transition: width .25s;
+  }
+
+ul li.last > a:after, ul li:last-child > a:after {
   display: none;
+}
+
 }

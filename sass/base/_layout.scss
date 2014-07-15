@@ -14,10 +14,6 @@ $sidebar-pad-wide: 20px !default;
 
 $indented-lists: false !default;
 
-$header-font-size: 1em !default;
-$header-padding-top: 1.5em !default;
-$header-padding-bottom: 1.5em !default;
-
 .group { @include pie-clearfix; }
 
 @mixin collapse-sidebar {
@@ -51,60 +47,20 @@ body {
   margin: 0 auto;
   > header, > nav, > footer, #content > article, #content > div > article, #content > div > section {
     @extend .group;
-    padding-left: $pad-min;
-    padding-right: $pad-min;
-    @if $make-it-responsive{
-      @media only screen and (min-width: 480px) {
-        padding-left: $pad-narrow;
-        padding-right: $pad-narrow;
-      }
-      @media only screen and (min-width: 768px) {
-        padding-left: $pad-medium;
-        padding-right: $pad-medium;
-      }
-      @media only screen and (min-width: 992px) {
-        padding-left: $pad-wide;
-        padding-right: $pad-wide;
-      }
-    }
-    @else {
-      padding-left: $pad-wide;
-      padding-right: $pad-wide;
-    }
+    padding-left: $pad-wide;
+    padding-right: $pad-wide;
   }
   div.pagination {
     @extend .group;
-    margin-left: $pad-min;
-    margin-right: $pad-min;
-    @if $make-it-responsive{
-      @media only screen and (min-width: 480px) {
-        margin-left: $pad-narrow;
-        margin-right: $pad-narrow;
-      }
-      @media only screen and (min-width: 768px) {
-        margin-left: $pad-medium;
-        margin-right: $pad-medium;
-      }
-      @media only screen and (min-width: 992px) {
-        margin-left: $pad-wide;
-        margin-right: $pad-wide;
-      }
-    }
-    @else {
       margin-left: $pad-wide;
       margin-right: $pad-wide;
-    }
-  }
-  > header {
-    font-size: $header-font-size;
-    padding-top: $header-padding-top;
-    padding-bottom: $header-padding-bottom;
   }
 }
 
 #content {
   overflow: hidden;
   > div, > article { width: 100%; }
+  min-height: 550px;
 }
 
 aside.sidebar {
@@ -137,114 +93,33 @@ body.sidebar-footer {
   .toggle-sidebar { display: none; }
 }
 
-@if $make-it-responsive {
-  @media only screen and (min-width: 550px) {
-    body > header { font-size: $header-font-size; }
-  }
-  @media only screen and (min-width: 750px) {
-    aside.sidebar { @include collapse-sidebar; }
-  }
-}
 #main, #content, .sidebar {
   @extend .group;
 }
 
-@if $make-it-responsive{
-  @media only screen and (min-width: 768px) {
-    body { -webkit-text-size-adjust: auto; }
-    body > header { font-size: $header-font-size * 1.2; }
-    #main {
-      padding: 0;
-      margin: 0 auto;
-    }
-    #content {
-      overflow: visible;
-      margin-right: $sidebar-width-medium;
-      position: relative;
-      .no-sidebar & { margin-right: 0; border-right: 0; }
-      .collapse-sidebar & { margin-right: 20px; }
-      > div, > article {
-        padding-top: $pad-medium/2;
-        padding-bottom: $pad-medium/2;
-        float: left;
-      }
-    }
-    aside.sidebar {
-      width: $sidebar-width-medium - $sidebar-pad-medium*2;
-      padding: 0 $sidebar-pad-medium $sidebar-pad-medium;
-      background: none;
-      clear: none;
-      float: left;
-      margin: 0 -100% 0 0;
-      section {
-        width: auto; margin-left: 0;
-        &.odd, &.even { float: none; width: auto; margin-left: 0; }
-      }
-      .collapse-sidebar & {
-        @include collapse-sidebar;
-      }
-    }
-  }
+body { -webkit-text-size-adjust: auto; }
 
-  @media only screen and (min-width: 992px) {
-    body > header { font-size: $header-font-size * 1.3; }
-    #content { margin-right: $sidebar-width-wide; }
-    #content {
-      > div, > article {
-        padding-top: $pad-wide/2;
-        padding-bottom: $pad-wide/2;
-      }
-    }
-    aside.sidebar {
-      width: $sidebar-width-wide - $sidebar-pad-wide*2;
-      padding: 1.2em $sidebar-pad-wide $sidebar-pad-wide;
-      .collapse-sidebar & {
-        padding: { left: $pad-wide; right: $pad-wide; }
-      }
-    }
-  }
+#main {
+  padding: 0;
+  margin: 0 auto;
 }
-@else {
-  /* IF NOT RESPONSIVE */
-  body { -webkit-text-size-adjust: auto; }
-  body > header { font-size: $header-font-size * 1.3; }
-  #main {
+
+#content {
+  overflow: visible;
+  position: relative;
+  > div {
     padding: 0;
-    margin: 0 auto;
   }
-  #content {
-    overflow: visible;
-    margin-right: $sidebar-width-wide;
-    position: relative;
-    .no-sidebar & { margin-right: 0; border-right: 0; }
-    .collapse-sidebar & { margin-right: 20px; }
-    > div, > article {
-      padding-top: $pad-wide/2;
-      padding-bottom: $pad-wide/2;
-      float: left;
-    }
-  }
-  aside.sidebar {
-    width: $sidebar-width-wide - $sidebar-pad-wide*2;
-    padding: 1.2em $sidebar-pad-wide $sidebar-pad-wide;
-    background: none;
-    clear: none;
+  > article {
+    padding-top: $pad-wide/2;
+    padding-bottom: $pad-wide/2;
     float: left;
-    margin: 0 -100% 0 0;
-    section {
-      width: auto; margin-left: 0;
-      &.odd, &.even { float: none; width: auto; margin-left: 0; }
-    }
-    .collapse-sidebar & {
-      display: none;
-      padding: { left: $pad-wide; right: $pad-wide; }
-    }
   }
 }
+
 
 @if $indented-lists == false {
   @media only screen and (min-width: 768px) {
     ul, ol { margin-left: 0; }
   }
 }
-
