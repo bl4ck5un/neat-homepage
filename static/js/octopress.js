@@ -152,9 +152,9 @@ $.domReady(function() {
   wrapFlashVideos();
   flashVideoFallback();
   addCodeLineNumbers();
-  getNav();
-  addSidebarToggler();
-  stickNavigator();
+//  getNav();
+//  addSidebarToggler();
+//  stickNavigator();
 });
 
 // iOS scaling bug fix
