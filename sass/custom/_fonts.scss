@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Trade Winds";
+  src: url("/theme/fonts/trade_winds/TradeWinds-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("/theme/fonts/lato/Lato-Regular.ttf");
+}
+
+@font-face {
+  font-family: "open sans bold";
+  src: url("/theme/fonts/OpenSans-bold.ttf");
+}
+
+$sans: "Lato", "Helvetica Neue", Arial, sans-serif !default;
+$serif: "Lato", Georgia, Times, "Times New Roman", serif !default;
+$mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !default;
+
+$heading-font-family: "Lato", "Georgia", "Helvetica Neue", Arial, sans-serif;
+$header-title-font-family: "Trade Winds", $heading-font-family;
+$header-subtitle-font-family: "Trade Winds", $heading-font-family;
+
+$nav-font: "Open Sans Bold";
+
+$sidebar-about-font-family: "Lato";
+

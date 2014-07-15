@@ -1,0 +1,12 @@
+<span class="byline author vcard">
+Posted by <span class="fn">{{ article.author }}</span>
+</span>
+{% include '_includes/article_time.html' %}
+{% if article.tags %}
+<span class="categories">
+<i class="fa fa-tags"></i>
+{% for tag in article.tags %}
+<a class="category" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+{% endfor %}
+</span>
+{% endif %}

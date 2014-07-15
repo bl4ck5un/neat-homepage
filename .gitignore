@@ -1,0 +1,7 @@
+# IDEA
+.idea
+.DS_Store
+
+.sass-cache
+*~
+static/css/main.css

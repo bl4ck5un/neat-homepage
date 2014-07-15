@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}{{ SITENAME }} - {{ page.title }} {% endblock %}
+{% block content %}
+<div>
+    <article class="hentry" role="article">
+        {% include '_includes/static.html' %}
+    </article>
+</div>
+{% endblock %}
