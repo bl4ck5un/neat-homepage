@@ -11,15 +11,28 @@ body > header {
   @if $pic-header {
     h1, h2 {display:  none;}
     div#logo{
-      width: $min-width - $pad-wide*2;
+      width: $min-width;
       margin: 0 auto;
       display: block;
       @include box-sizing('border-box');
       background: image-url('logo.png') no-repeat;
       background-size: auto 70px;
-      background-position: center left;
+      background-position: $pad-wide 10px;
       height: 90px;
+
+      @media screen and (max-width: 980px) {
+        width: 90%;
+        background-position: $pad-medium 10px;
+      }
+
+      @media screen and (max-width: 640px) {
+        width: 100%;
+        background-position: center center;
+      }
+
     }
+
+
   }
   @else {
     font-size: $header-font-size;
