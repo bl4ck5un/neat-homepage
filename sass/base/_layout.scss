@@ -41,12 +41,11 @@ $indented-lists: false !default;
 
 body {
   -webkit-text-size-adjust: none;
-  max-width: $min-width;
-  min-width: $min-width;
+//  max-width: $min-width;
+//  min-width: $min-width;
   position: relative;
   margin: 0 auto;
-  > header, > nav, > footer, #content > article, #content > div > article, #content > div > section {
-    @extend .group;
+  #content > article, #content > div > article, #content > div > section {
     padding-left: $pad-wide;
     padding-right: $pad-wide;
   }
@@ -54,6 +53,14 @@ body {
     @extend .group;
       margin-left: $pad-wide;
       margin-right: $pad-wide;
+  }
+  > div {
+    max-width: $min-width;
+    min-width: $min-width;
+  }
+  > nav, > footer {
+    width: ($min-width - 1);
+    margin: 0 auto;
   }
 }
 

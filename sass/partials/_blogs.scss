@@ -1,0 +1,76 @@
+article + article {
+  // note the Saas syntax trick here:
+  // & equals 'article + article'
+  .blog-index & {
+    background: $img-border top left repeat-x;
+  }
+}
+
+#content .blog-index {
+  padding: { top: 0; bottom: 0; }
+  article {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  article header {
+    background: none;
+    padding-bottom: 0;
+    margin-bottom: .5em;
+  }
+  article h1 {
+    font-size: 1.6em;
+    display: inline;
+    a { color: inherit; &:hover { color: $link-color-hover; } }
+  }
+
+  article > header > h1 + span {
+    // clock icon and post date
+    font-size: $fs-blog-small;
+    color: #aaaaaa;
+  }
+
+  // goto button
+  a[rel=full-article] {
+    font-size: $fs-blog-small;
+    display: inline;
+    position: relative;
+    text-align: right;
+    text-decoration: none;
+    color: #aaaaaa;
+    @include transition(color .5s);
+    &:hover {
+      color: $link-color-hover;
+    }
+    padding: .2px 0 .2px 0;
+  }
+
+  article > div.entry-content > p:first-child {
+    margin-bottom: 2px;
+  }
+
+  footer {
+    @extend .sans;
+    margin-top: 1em;
+  }
+}
+
+#content div.pagination {
+  text-align: center;
+  position: relative;
+  background: $img-border top left repeat-x;
+  padding: {
+    top: 0em;
+    bottom: 0.5em;
+  }
+  font-size: $fs-blog-small;
+  a {
+    text-decoration: none;
+    color: $text-color-light;
+    &.prev { position: absolute; left: 0; }
+    &.next { position: absolute; right: 0; }
+    &:hover { color: $link-color-hover; }
+    &[href*=archive] {
+      &:before, &:after { content: '\2014'; padding: 0.3em; }
+    }
+  }
+}

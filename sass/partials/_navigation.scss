@@ -1,14 +1,12 @@
 $nav-font: "Lato";
-$nav-bg: darken(#83AF9B, 5);
 $nav-text-color: #888;
 $nav-hover-color: #333333;
 
 body > nav {
-  background: $main-bg image-url("noise.png");
-  padding-top: 12px;
-
+  padding: 10px 0;
   text-align: center;
-  ul {
+  background: $main-bg $noise-bg;
+  > ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -17,8 +15,7 @@ body > nav {
     zoom: 1;
     border: none;
   }
-
-  ul > li {
+  > ul > li {
     float: left;
     display: block;
     padding: 0;
@@ -26,7 +23,7 @@ body > nav {
     box-shadow: none;
   }
 
-  ul > li > a {
+  > ul > li > a {
     color: $nav-text-color;
     text-decoration: none;
     display: block;

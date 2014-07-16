@@ -35,12 +35,17 @@ div#about ul.sns {
   display: inline-block;
   margin: 0;
   > li {  float: left;}
-
-  > li a{
+  > li > a{
     width: $icon-size;
     height: $icon-size;
     padding: $icon-margin;
     border: none;
     box-shadow: none;
+  }
+  > li > a {
+    color: #333333;
+  }
+  > li > a:visited {
+    color: #333333;
   }
 }

@@ -1,18 +1,18 @@
 @import "compass/css3/box-sizing";
-
 $header-font-size: 1.2em;
-
 body > header {
+
   @if $header-bg-img {
     background: $header-bg-img;
   }
   @else {
     background: $header-bg;
   }
-
   @if $pic-header {
     h1, h2 {display:  none;}
     div#logo{
+      width: $min-width - $pad-wide*2;
+      margin: 0 auto;
       display: block;
       @include box-sizing('border-box');
       background: image-url('logo.png') no-repeat;
@@ -40,5 +40,4 @@ body > header {
       font-weight: normal;
     }
   }
-
 }
