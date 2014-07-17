@@ -20,6 +20,8 @@ $indented-lists: false !default;
 body {
   position: relative;
   margin: 0 auto;
+  min-width: 480px;
+
   #content > article, #content > div > article {
     padding-left: $pad-wide;
     padding-right: $pad-wide;
@@ -46,6 +48,7 @@ body {
     }
   }
 
+  // 640px or smaller
   @media screen and (max-width: 640px) {
     > div#main, > nav, > footer { width: 95%; }
     #content > article, #content > div > article {
@@ -62,7 +65,7 @@ body {
 #content {
   overflow: hidden;
   > div, > article { width: 100%; }
-  min-height: 550px;
+  min-height: 600px;
 }
 
 .flex-content { max-width: 100%; height: auto; }
@@ -89,9 +92,9 @@ body {
   > div {
     padding: 0;
   }
-  > article {
-    padding-top: $pad-wide/2;
-    padding-bottom: $pad-wide/2;
-    float: left;
-  }
+//  > article {
+//    padding-top: $pad-wide/2;
+//    padding-bottom: $pad-wide/2;
+//    float: left;
+//  }
 }

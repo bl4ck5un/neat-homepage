@@ -1,5 +1,7 @@
 @import "compass/css3/box-sizing";
+
 $header-font-size: 1.2em;
+$pic-header: true;
 body > header {
 
   @if $header-bg-img {
