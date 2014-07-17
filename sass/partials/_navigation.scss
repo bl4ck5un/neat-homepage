@@ -3,9 +3,12 @@ $nav-text-color: #888;
 $nav-hover-color: #333333;
 
 body > nav {
-  padding: 10px 0;
   text-align: center;
   background: $main-bg $noise-bg;
+  padding: 10px 0 0;
+
+  @media screen and (max-width: 640px) { padding: 5px 0 0; }
+
   > ul {
     list-style: none;
     margin: 0;
@@ -47,12 +50,12 @@ body > nav {
       font-size: 18px;
     }
     @media screen and (max-width: 640px) {
-      padding: 6px 8px 8px;
-      font-size: 18px;
+      padding: 6px 8px 6px;
+      font-size: 16px;
     }
     @media screen and (max-width: 480px) {
-      padding: 4px 6px 8px;
-      font-size: 16px;
+      padding: 4px 6px 2px;
+      font-size: 15px;
     }
 
     &:visited {

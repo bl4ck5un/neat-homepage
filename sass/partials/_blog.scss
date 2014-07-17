@@ -2,6 +2,11 @@ $fs-blog-small: .8em;
 
 article {
   padding-top: 20px;
+  @media screen and (max-width: 980px) { padding: 10px; }
+  @media screen and (max-width: 640px) { padding: 5px; }
+  @media screen and (max-width: 480px) { padding: 0px; }
+
+
   a { @extend .force-wrap; }
 
   header {

@@ -1,26 +1,18 @@
 $max-width: 1200px;
-$min-width: 900px;
+$min-width: 880px;
 
 // Padding used for layout margins
 $pad-min: 18px !default;
-$pad-narrow: 25px !default;
-$pad-medium: 35px !default;
-$pad-wide: 55px !default;
-
-// Sidebar widths used in media queries
-$sidebar-width-medium: 280px !default;
-$sidebar-width-wide: 280px !default;
-$sidebar-pad-medium: 15px !default;
-$sidebar-pad-wide: 20px !default;
-
-$indented-lists: false !default;
+$pad-narrow: 40px !default;
+$pad-medium: 60px !default;
+$pad-wide: 80px !default;
 
 .group { @include pie-clearfix; }
 
 body {
   position: relative;
   margin: 0 auto;
-  min-width: 480px;
+  min-width: 400px;
 
   #content > article, #content > div > article {
     padding-left: $pad-wide;
@@ -37,7 +29,7 @@ body {
 
   // 980px or smaller
   @media screen and (max-width: 980px) {
-    > div#main, > nav, > footer { width: 90%; }
+    > div#main, > nav, > footer { width: 85%; }
     #content > article, #content > div > article {
       padding-left: $pad-medium;
       padding-right: $pad-medium;
@@ -50,7 +42,7 @@ body {
 
   // 640px or smaller
   @media screen and (max-width: 640px) {
-    > div#main, > nav, > footer { width: 95%; }
+    > div#main, > nav, > footer { width: 93%; }
     #content > article, #content > div > article {
       padding-left: $pad-narrow;
       padding-right: $pad-narrow;
@@ -58,6 +50,19 @@ body {
     div.pagination {
       margin-left: $pad-narrow;
       margin-right: $pad-narrow;
+    }
+  }
+
+  // 640px or smaller
+  @media screen and (max-width: 480px) {
+    > div#main, > nav, > footer { width: 90%; }
+    #content > article, #content > div > article {
+      padding-left: $pad-min;
+      padding-right: $pad-min;
+    }
+    div.pagination {
+      margin-left: $pad-min;
+      margin-right: $pad-min;
     }
   }
 }
